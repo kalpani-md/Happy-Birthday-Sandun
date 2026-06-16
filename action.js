@@ -1,4 +1,17 @@
 "use strict";
+/**************************Open Page**************************/
+const particleField = document.getElementById('particleField');
+for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.setProperty('--x', `${Math.random() * 200 - 100}px`);
+    particle.style.setProperty('--y', `${Math.random() * 200 - 100}px`);
+    particle.style.animation = `particleFloat ${1 + Math.random() * 2}s infinite`;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particleField.appendChild(particle);
+}
+/**************************First Page**************************/
 function explodeConfetti() {
 
     const colors = [
@@ -72,6 +85,8 @@ function showSlides() {
 }
 /**************************Moving**************************/
 function toFirstPate(){
+    const music = document.getElementById("bgMusic");
+    music.play();
     document.getElementById("open-page").style.display = "none";
     document.getElementById("first-page").style.display = "grid";
     document.getElementById("photo-page").style.display = "none";    
@@ -95,7 +110,3 @@ function restart(){
     document.getElementById("photo-page").style.display = "none";    
     document.getElementById("wish-page").style.display = "none";
 }
-
-/*
-    const music = document.getElementById("bgMusic");
-    music.play();*/

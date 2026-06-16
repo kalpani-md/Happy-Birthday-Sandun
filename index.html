@@ -10,14 +10,17 @@
     </head>
     <body>
         <div id="open-page">
-            <button type="button" onclick="toFirstPate()" id="openbtn">Let's Go</button>
+            <button type="button" class="btn magnetic" onclick="toFirstPate()" id="openbtn">
+                <span>Magnetic</span>
+                <div class="particles-field" id="particleField"></div>
+            </button>
         </div>
         <div id="first-page">
             <div class="spin-container">
                 <h1 class="spin-text">30</h1>
             </div>
             <h1 id="mainTitle">Happy Birthday</h1>
-            <button type="button" onclick="toPhotoPage()">
+            <button type="button" onclick="toPhotoPage()" id="firstbtn">
                 <i class="fa-solid fa-forward"></i>
             </button>
         </div>
