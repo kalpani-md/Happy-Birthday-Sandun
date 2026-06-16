@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Happy Birthday Sandun!!</title>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="style.css">    
+    </head>
+    <body>
+        <div id="open-page">
+            <button type="button" onclick="toFirstPate()" id="openbtn">Let's Go</button>
+        </div>
+        <div id="first-page">
+            <div class="spin-container">
+                <h1 class="spin-text">30</h1>
+            </div>
+            <h1 id="mainTitle">Happy Birthday</h1>
+            <button type="button" onclick="toPhotoPage()">
+                <i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+        <div id="photo-page">
+            <div class="images">
+                <img src="image1.jpg" alt="portraits">
+            </div>
+            <div class="images">
+                <img src="image2.jpg" alt="portraits">
+            </div>
+            <div class="images">
+                <img src="image3.jpg" alt="portraits">
+            </div>
+            <div class="text-cont">
+                <h1>Happy Birthday</h1>
+                <h2>May all your dreams take flight this year!</h2>
+            </div>
+            <button type="button" onclick="toWishPage()" id="secondbtn">
+                <i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+        <div id="wish-page">
+            <div id="wish-cont">
+                <p>Happy Birthday!<br>
+                On your special day, I wish you happiness, good health, success, and all the wonderful things you deserve. May this year bring you closer to your dreams and reward all the hard work and dedication you put into everything you do.<br>
+                I hope the universe blesses you with new opportunities, memorable moments, and endless reasons to smile. You deserve all the good things life has to offer. Never forget how valuable, capable, and special you are.<br>
+                Happy Birthday once again. Enjoy your day to the fullest!<br>
+                &#x1F339;&#x1F942; &#x1F382; &#x1F389;</p>
+            </div>
+            <button type="button" onclick="restart()" id="thirddbtn">
+                <i class="fa-solid fa-repeat"></i>
+            </button>
+        </div>
+        <audio id="bgMusic" loop>
+            <source src="happyBirthday.mp3" type="audio/mpeg">
+        </audio>
+        <script src="action.js"></script>
+    </body>
+</html>
