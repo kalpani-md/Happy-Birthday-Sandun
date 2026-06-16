@@ -84,7 +84,7 @@ function showSlides() {
     setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 /**************************Moving**************************/
-function toFirstPate(){
+function toFirstPage(){
     const music = document.getElementById("bgMusic");
     music.play();
     document.getElementById("open-page").style.display = "none";

@@ -22,7 +22,7 @@
     perspective: 1000px;
     overflow-x: hidden;
 }
-.btn{
+.btn-magnetic{
     position: relative;
     padding: 3vh 20vw;
     font-size: 5vw;
