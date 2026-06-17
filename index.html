@@ -13,7 +13,7 @@
     <body>
         <!--1:Open-->
         <section id="open-page" class="page">
-            <button type="button" class="btn-magnetic" onclick="toFirstPage()" id="openbtn">
+            <button type="button" onclick="toFirstPage()" id="openbtn" class="btn-magnetic">
                 <span>Open</span>
                 <div class="particles-field" id="particleField"></div>
             </button>
@@ -29,27 +29,25 @@
                 <i class="fa-solid fa-forward"></i>
             </button>
         </section>
+
         <!--3:Image Gallery-->
         <section id="photo-page" class="page">
-            <div class="images">
-                <img src="image1.jpg" alt="portraits">
-            </div>
-            <div class="images">
-                <img src="image2.jpg" alt="portraits">
-            </div>
-            <div class="images">
-                <img src="image3.jpg" alt="portraits">
+            <div class="slideShow">
+                <div class="images"><img src="image1.jpg" alt="portraits 1"></div>
+                <div class="images"><img src="image2.jpg" alt="portraits 2"></div>
+                <div class="images"><img src="image3.jpg" alt="portraits 3"></div>                
             </div>
             <div class="text-cont">
                 <h1>Happy Birthday</h1>
                 <h2>May all your dreams take flight this year!</h2>
             </div>
-            <button type="button" onclick="toWishPage()" id="secondbtn">
+            <button type="button" onclick="toWishPage()" id="secondbtn" class="nav-btn">
                 <i class="fa-solid fa-forward"></i>
             </button>
         </section>
-        <!---->
-        <div id="wish-page">
+
+        <!--4:Wish Page-->
+        <section id="wish-page" class="page">
             <div id="wish-cont">
                 <p>Happy Birthday!<br>
                 On your special day, I wish you happiness, good health, success, and all the wonderful things you deserve. May this year bring you closer to your dreams and reward all the hard work and dedication you put into everything you do.<br>
@@ -57,14 +55,16 @@
                 Happy Birthday once again. Enjoy your day to the fullest!<br>
                 &#x1F339;&#x1F942; &#x1F382; &#x1F389;</p>
             </div>
-            <button type="button" onclick="restart()" id="thirddbtn">
+            <button type="button" onclick="restart()" id="thirddbtn" class="nav-btn">
                 <i class="fa-solid fa-repeat"></i>
             </button>
-        </div>
-        <!---->
+        </section>
+
+        <!--Background Audio-->
         <audio id="bgMusic" loop>
             <source src="happyBirthday.mp3" type="audio/mpeg">
         </audio>
+
         <script src="action.js"></script>
     </body>
 </html>
