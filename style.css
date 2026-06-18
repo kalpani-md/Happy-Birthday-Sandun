@@ -1,141 +1,110 @@
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body {
-    font-family: 'Inter', sans-serif;
-    overflow: hidden; 
-    height: 100vh;
-    width: 100vw;
+body{
+    overflow: hidden;
     background: #000;
 }
-.page {
+.first, .photo, .wish{
     display: none;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+button{
+    cursor: pointer;
 }
 /**************************Open Page**************************/
-#open-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #141414, #000000);
-    z-index: 10;
-}
-.btn-magnetic, .nav-btn {
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease;
-}
-.nav-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: transparent;
-    color: #ffd700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    font-size: 3rem;
-    z-index: 100;
-}
-.btn-magnetic {
+.open{
     position: relative;
-    padding: 3vh 20vw;
-    font-size: 5vw;
-    font-weight: 600;
-    color: #000;
-    border-radius: 25px;
-    min-width: 200px;
-    z-index: 1;
-    background: linear-gradient(45deg, #ffe4b5, #ffd700);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    overflow: visible;
-}
-.btn-magnetic:hover {
-    background: linear-gradient(45deg, #ffd700, #ffe4b5);
-    transform: translateY(-0.25em);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
-}
-.btn-magnetic:hover::before {
-    opacity: 1;
-}
-.btn-magnetic::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 1em;
-    position: absolute;
-    left: 0;
-    bottom: -1.35em;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(255, 215, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0) 80%
-    );
-    opacity: 0;
-    transition: all 0.65s;
-    content: "";
-}
-.particles-field {
-    position: absolute;
-    inset: -100%;
-    transition: opacity 0.3s ease;
+    height: 100vh;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #141414, #000000);
 }
 .particle {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 6px;
+    height: 6px;    
+    border-radius: 50%;
+
+    
     background: #ffd700;
     box-shadow:
         0 0 5px #ffd700,
         0 0 15px #ffe4b5,
         0 0 25px #ff8c00;
-    border-radius: 50%;
 }
 @keyframes particleFloat {
     0% { transform: translate(var(--x), var(--y)) scale(0); }
     50% { transform: translate(calc(var(--x) * -1), calc(var(--y) * -1)) scale(1); }
     100% { transform: translate(var(--x), var(--y)) scale(0); }
 }
-/**************************First Page**************************/
-#firstbtn, #secondbtn, #thirddbtn {
-    width: 25vw;
-    height: 8vh;
-    background-color: transparent;
+.openBtn{
+    position: relative;  
+    min-width: 200px;
+    padding: 3vh 20vw;
+    border: none;
+    border-radius: 25px;
+    z-index: 1;
+    font-size: 5vw;
+    font-weight: 600;
+
+    transition: all 0.35s;
+    color: #000;
+    background: linear-gradient(45deg, #ffe4b5, #ffd700);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
-#firstbtn {
+.openBtn::before{
+    position: absolute;
+    left: 0;
+    bottom: -1.35em;
+    width: 100%;
+    height: 1em;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 215, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0) 80%
+    );
+    opacity: 0;
+    transition: all 0.65s;
+    content: "";
+}
+.openBtn:hover{
+    background: linear-gradient(45deg, rgb(255, 215, 0), rgb(255, 228, 181));
+    transform: translateY(-0.25em);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+.openBtn:hover::before{
+    opacity: 1;
+}
+/**************************First Page**************************/
+.first{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+
+    background-image: url(first-page-background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;    
+}
+.spinContainer{
     grid-row: 4;
     grid-column: 4;
-    align-self: end;
-    justify-self: end; /* Ensures arrow stays cleanly in its corner slot */
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;   
 }
-.fa-solid {
-    display: inline-block;
-    font-size: 10vw;
-}
-#first-page {
-    /* When JavaScript sets display to 'grid', it will use these settings cleanly */
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr); 
-    background-color: #000;
-    background-image: url(first-page.png), url(first-page-background.jpg);
-    background-repeat: no-repeat, no-repeat;
-    background-position: top right, bottom;
-    background-attachment: fixed, fixed;
-    background-size: 100%, 80%;
-    perspective: 1000px;
-}
-.spin-container {
-    grid-row: 2;
-    grid-column: 2 / 4; /* Centered it across columns 2 and 3 so it doesn't clip */
-    align-self: center;
-    text-align: center;
-}
-.spin-text {
-    display: inline-block;
-    font-size: 20vw;
+.spinText {
+    font-size: 5rem;
     font-weight: bold;
     color: #ffd700;
     text-shadow:
@@ -143,21 +112,22 @@ body {
         0 0 20px #FFC107,
         0 0 40px #FF8C00, 
         0 0 40px #fcbf49;
-    transform: rotateY(0deg); 
-    transform-style: preserve-3d; 
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
     animation: spin-3d 4s infinite linear;
-    border: 8px solid; 
-    border-color: #fcbf49 #FF8C00 #FFA500; 
+
+    border: 5px solid; 
     border-radius: 50%; 
-    padding: 20px; /* Reduced crazy 35% padding which ruined container calculations */
-} 
-@keyframes spin-3d { 
-    0% { transform: rotateY(0deg); } 
-    100% { transform: rotateY(360deg); } 
+    padding: 20px;
+    border-color: #fcbf49 #FF8C00 #FFA500;     
 }
-#mainTitle {
-    grid-row: 3;
-    grid-column: 1 / 5;
+@keyframes spin-3d {
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(360deg);}
+}
+#mainTitle{
+    grid-row: 6;
+    grid-column: 1/9;
     font-size: 18vw;
     font-family: "Cooper Std Black", "Cooper Black", "Cooper", serif;
     text-align: center;
@@ -174,7 +144,23 @@ body {
     50% { color: #FFA500; }
     100% { color: #FFD700; }
 }
-#first-page .fa-solid {
+.firstBtn, .photoBtn, .restartBtn{
+    width: 25vw;
+    height: 8vh;
+    border: none;
+    font-size: 3rem;    
+
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.firstBtn {
+    grid-row: 10;
+    grid-column: 8;
+    align-self: flex-end;          
+}
+.firstBtn .fa-solid, .photoBtn .fa-solid{
+    display: inline-block;
+    font-size: 15vw;
     animation: backforth 3s infinite ease-in-out;
 }
 @keyframes backforth {
@@ -182,28 +168,24 @@ body {
     50%  { transform: translateX(15%); color: #b58900; text-shadow: 0 0 0px transparent; }
     100% { transform: translateX(1%); color: #ffd700; text-shadow: 0 0 10px #ffd700; }
 }
-.confetti {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; 
-    z-index: 9999; 
-    pointer-events: none; 
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
 /**************************Photo Page**************************/
-#photo-page {
+.slideshowContainer {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    height: 100vh;
     overflow: hidden;
-    background-color: #050505;
 }
-.images {
+.mySlides{
     display: none;
+}
+img{
+    vertical-align: middle; 
+    width: 100%;
+    object-fit: cover;
     height: 100vh;
 }
-.images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.anime {
     animation: 
         zoom 8s infinite linear,
         fade 2s ease-in-out;
@@ -216,68 +198,71 @@ body {
     from { transform: scale(1); }
     to { transform: scale(1.1); }
 }
-#photo-page .text-cont {
+.textContainer{
     position: absolute;
-    bottom: 15%;
+    bottom: 10vh;
     width: 100%;
+    z-index: 10;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+    font-weight: bold;
+    text-align: center;
+
     background: rgba(30, 20, 10, 0.75);
     backdrop-filter: blur(4px);
     border-top: 2px solid #ffd700;
     border-bottom: 2px solid #ffd700;
-    color: #ffe4b5;
-    padding: 2vh 0;
     box-shadow: 0 0 30px rgba(0,0,0,0.8);
 }
-.text-cont h1 {
+.textContainer h1{
     font-family: "Bickham Script Pro", "Bickham Script", cursive;
-    text-align: center;
-    font-size: 10vw;
-    line-height: 1.2;
+    font-size: 9vw;
+    line-height: 1.1;
     color: #ffd700;
     text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
-.text-cont h2 {
+.textContainer h2{
     font-family: "Adobe Arabic", "adobe-arabic", serif;
-    text-align: center;
     font-size: 5vw;
     line-height: 1.2;
-    margin-top: 5px;
     color: #fff8dc;
 }
-#secondbtn, #thirddbtn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.photoBtn, .restartBtn{
     z-index: 10;
-    border: none;
-}
-#secondbtn .fa-solid, #thirddbtn .fa-solid {
-    animation: backforth2 3s infinite ease-in-out;
-}
-@keyframes backforth2 {
-    0%   { transform: translateX(1%); color: #ffd700; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
-    50%  { transform: translateX(15%); color: #ffffff; filter: drop-shadow(0 4px 8px #ffd700); }
-    100% { transform: translateX(1%); color: #ffd700; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+    position: fixed;
+    bottom: 0;
+    right: 0;      
 }
 /**************************Wish Page**************************/
-#wish-page {
+.wish{
     height: 100vh;
     background-image: url(wish-page-background.jpg);
     background-repeat: no-repeat;
-    background-size: cover; /* Added to keep it looking clean on all aspect ratios */
+    background-size: cover;
     background-attachment: fixed;
 }
-#wish-cont {
+.wishContainer{
     height: inherit;
-    display: flex; /* Swapped to flex for cross-browser reliable paragraph centering */
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-#wish-cont p {
+.wishContainer p{
     padding: 10%;
     font-size: 5vw;
     text-align: center;
     color: #032B69;
     font-weight: 700;
     text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+.restartBtn .fa-solid {
+    display: inline-block;
+    font-size: 15vw;
+    animation: backforthRestart 3s infinite ease-in-out;
+}
+@keyframes backforthRestart {
+    0% {transform: translateX(1%);color: #032B69;text-shadow: 0 0 10px #032B69;}
+    50% {transform: translateX(15%);color: #5A7DBD;text-shadow: 0 0 0px transparent;}
+    100% {transform: translateX(1%);color: #032B69;text-shadow: 0 0 10px #032B69;}
 }
