@@ -168,16 +168,30 @@ button{
     50%  { transform: translateX(15%); color: #b58900; text-shadow: 0 0 0px transparent; }
     100% { transform: translateX(1%); color: #ffd700; text-shadow: 0 0 10px #ffd700; }
 }
+.confetti{
+    position: fixed;
+    width: 10px;
+    height: 16px;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
 /**************************Photo Page**************************/
 .slideshowContainer {
-    max-width: 1000px;
+    max-width: 100%;
     position: relative;
-    margin: auto;
     height: 100vh;
     overflow: hidden;
 }
 .mySlides{
-    display: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.mySlides.active{
+    opacity: 1;
 }
 img{
     vertical-align: middle; 
@@ -186,12 +200,13 @@ img{
     height: 100vh;
 }
 .anime {
-    animation: 
-        zoom 8s infinite linear,
-        fade 2s ease-in-out;
+    animation:fade 2s ease-in-out;
+}
+.mySlides.active img{
+    animation: zoom 5s linear forwards;
 }
 @keyframes fade {
-    from { opacity: 0.9; filter: blur(3px); }
+    from { opacity: 0; filter: blur(3px); }
     to { opacity: 1; filter: blur(0); }
 }
 @keyframes zoom {

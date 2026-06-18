@@ -12,7 +12,7 @@ for (let i = 0; i < 50; i++) {
     particle.style.top = `${Math.random() * 100}%`;
     particlePage.appendChild(particle);
 }
-/**************************Confetti Explosion Engine**************************jjlkjjj;*/
+/**************************Confetti Explosion Engine**************************/
 function explodeConfetti() {
     const colors = [
         "#ff0000", "#00ff00", "#0000ff",
@@ -61,24 +61,23 @@ function explodeConfetti() {
 }
 /**************************Photo Page Slideshow**************************/
 let slideIndex = 0;
-showSlides();
+const slides = document.querySelectorAll(".mySlides");
 
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
+slides[0].classList.add("active");
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
+setInterval(() => {
+
+    slides[slideIndex].classList.remove("active");
 
     slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }    
 
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 5000); 
-}
+    if(slideIndex >= slides.length){
+        slideIndex = 0;
+    }
+
+    slides[slideIndex].classList.add("active");
+
+}, 5000);
 /**************************Navigation Control Matrix**************************/
 function toFirstPage(){
     const music = document.getElementById("bgMusic");
