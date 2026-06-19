@@ -104,29 +104,28 @@ button{
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    border: 1px solid green;
 }
 .spinContainer, #mainTitle, .firstBtn{
     position: relative;
     z-index: 1;
 }
 .spinContainer{
-    grid-row: 4;
-    grid-column: 4;
+    grid-row: 3;
+    grid-column: 1/9;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1000px;
 }
 .spinText {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: bold;
-    color: #ffd700;
+    color: #c1a27a;
     text-shadow:
-        0 0 10px #FFD700,
-        0 0 20px #FFC107,
-        0 0 40px #FF8C00, 
-        0 0 40px #fcbf49;
+        0 0 10px #c1a27a,
+        0 0 20px #9a7eff,
+        0 0 40px #b48c45, 
+        0 0 40px #a08040;
     transform: rotateY(0deg);
     transform-style: preserve-3d;
     animation: spin-3d 4s infinite linear;
@@ -134,30 +133,31 @@ button{
     border: 5px solid; 
     border-radius: 50%; 
     padding: 20px;
-    border-color: #fcbf49 #FF8C00 #FFA500;
+    border-color: #C1A27A #907850 #BFA06C;
 }
 @keyframes spin-3d {
     0% {transform: rotateY(0deg);}
     100% {transform: rotateY(360deg);}
 }
 #mainTitle{
-    grid-row: 6;
+    grid-row: 5;
     grid-column: 1/9;
-    font-size: 18vw;
+    font-size: 15vw;
     font-family: "Cooper Std Black", "Cooper Black", "Cooper", serif;
     text-align: center;
-    color: #ffd700;
+    color: #C1A27A;
     text-shadow:
-        0 0 10px #FFD700,
-        0 0 20px #FFC107,
-        0 0 40px #FF8C00;
+        0 0 10px #C1A27A,
+        0 0 20px #9A7E55,
+        0 0 40px #B48C45;
     animation: happy 1s infinite alternate;
 }
+
 @keyframes happy {
-    0% { color: #FF8C00; }
-    25% { color: #FFC107; }
-    50% { color: #FFA500; }
-    100% { color: #FFD700; }
+    0%   { color: #9A7E55; }
+    25%  { color: #B48C45; }
+    50%  { color: #C1A27A; }
+    100% { color: #DDC5A2; }
 }
 .firstBtn, .photoBtn, .restartBtn{
     width: 25vw;
@@ -169,7 +169,7 @@ button{
     transition: all 0.3s ease;
 }
 .firstBtn {
-    grid-row: 10;
+    grid-row: 1;
     grid-column: 8;
     align-self: flex-end; 
 }
@@ -179,9 +179,9 @@ button{
     animation: backforth 3s infinite ease-in-out;
 }
 @keyframes backforth {
-    0%   { transform: translateX(1%); color: #ffd700; text-shadow: 0 0 10px #ffd700; }
-    50%  { transform: translateX(15%); color: #b58900; text-shadow: 0 0 0px transparent; }
-    100% { transform: translateX(1%); color: #ffd700; text-shadow: 0 0 10px #ffd700; }
+    0%   { transform: translateX(1%); color: #9A7E55; text-shadow: 0 0 10px #9A7E55; }
+    50%  { transform: translateX(15%); color: #B48C45; text-shadow: 0 0 0px transparent; }
+    100% { transform: translateX(1%); color: #C1A27A; text-shadow: 0 0 10px #C1A27A; }
 }
 .confetti{
     position: fixed;
@@ -263,7 +263,7 @@ button{
 .photoBtn, .restartBtn{
     z-index: 10;
     position: fixed;
-    bottom: 0;
+    top: 1vh;
     right: 0;      
 }
 /**************************Wish Page**************************/
