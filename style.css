@@ -103,8 +103,8 @@ button{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    height: 100vh;
     z-index: 0;
+    border: 1px solid green;
 }
 .spinContainer, #mainTitle, .firstBtn{
     position: relative;
